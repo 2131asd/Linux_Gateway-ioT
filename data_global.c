@@ -2,6 +2,7 @@
 #include "dota_cache.h"
 #include "sqlite_link_list.h"
 
+
 pthread_cond_t cond_sqlite;
 pthread_cond_t cond_analysis;
 pthread_cond_t cond_client_send;
