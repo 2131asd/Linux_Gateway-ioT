@@ -1,7 +1,7 @@
 #include "data_global.h"
 #include "dota_cache.h"
 #include "sqlite_link_list.h"
-
+//askdhjsahdjashdasd
 
 pthread_cond_t cond_sqlite;
 pthread_cond_t cond_analysis;
