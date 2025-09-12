@@ -1,3 +1,7 @@
+/*
+åŸºäºSqlitæ•°æ®åº“å®ç°å„ç§åˆ›å»ºï¼Œå‡ºåº“ï¼Œå…¥åº“ç­‰æ“ä½œ
+*/
+
 #include "pthread_sqlite.h"	
 #include "sqlite3.h"
 
@@ -30,7 +34,7 @@ extern struct sqlite_operation sqlite_operation_s;
 extern slinklist slinkHead, slinkTail;
 
 /*
-**»Øµ½º¯Êı£¬²éÑ¯Ö®ºóµÄĞÅÏ¢¶¼Í¨¹ı
+**å›åˆ°å‡½æ•°ï¼ŒæŸ¥è¯¢ä¹‹åçš„ä¿¡æ¯éƒ½é€šè¿‡
 */
 static int callback_getenv (void * para, int n_column, char ** column_value, char ** column_name )
 {
@@ -71,7 +75,7 @@ static int callback_getenv_s (void * para, int n_column, char ** column_value, c
 }
 
 /*
-**´´½¨Êı¾İ¿â±í
+**åˆ›å»ºæ•°æ®åº“è¡¨
 */
 int Create_table (void)
 {
@@ -167,7 +171,7 @@ int Create_table (void)
 }
 
 /*
-**³õÊ¼»¯»·¾³±í£¬
+**åˆå§‹åŒ–ç¯å¢ƒè¡¨ï¼Œ
 */
 int Init_table_env (void)
 {
@@ -214,8 +218,8 @@ int Init_table_env (void)
 }
 
 /*
-**¸üĞÂenv²ÎÊıµÄSQLiteÖ¸ÁîÑ¡Ôñº¯Êı
-**Õâ¸öº¯ÊıÖĞÖ»ÄÜ²åÈëintÀàĞÍµÄÖµ
+**æ›´æ–°envå‚æ•°çš„SQLiteæŒ‡ä»¤é€‰æ‹©å‡½æ•°
+**è¿™ä¸ªå‡½æ•°ä¸­åªèƒ½æ’å…¥intç±»å‹çš„å€¼
 */
 int setEnv (float val, int dev_no_t, int no)
 {
@@ -299,8 +303,8 @@ int setEnv (float val, int dev_no_t, int no)
 }
 
 /*
-**¸üĞÂenv²ÎÊıµÄSQLiteÖ¸ÁîÑ¡Ôñº¯Êı
-**Õâ¸öº¯ÊıÖĞÖ»ÄÜ²åÈë×Ö·û´®ÀàĞÍµÄÖµ
+**æ›´æ–°envå‚æ•°çš„SQLiteæŒ‡ä»¤é€‰æ‹©å‡½æ•°
+**è¿™ä¸ªå‡½æ•°ä¸­åªèƒ½æ’å…¥å­—ç¬¦ä¸²ç±»å‹çš„å€¼
 */
 int setEnv_s (char *val, int no)
 {
@@ -347,7 +351,7 @@ int setEnv_s (char *val, int no)
 }
 
 /*
-**»ñµÃenv²ÎÊıµÄSQLiteÖ¸ÁîÑ¡Ôñº¯Êı
+**è·å¾—envå‚æ•°çš„SQLiteæŒ‡ä»¤é€‰æ‹©å‡½æ•°
 */
 
 int getEnv_select (int storageNum_t, int no)
@@ -439,7 +443,7 @@ int getEnv_select (int storageNum_t, int no)
 }
 
 /*
-**¸üĞÂenv²ÎÊı
+**æ›´æ–°envå‚æ•°
 */
 int updateEnv (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t)
 {
@@ -461,7 +465,7 @@ int updateEnv (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_
 }
 
 /*
-**»ñµÃenv²ÎÊı
+**è·å¾—envå‚æ•°
 */
 int getEnv (struct env_info_clien_addr *env_info_clien_addr_t, int storageNum_t)
 {
@@ -1026,29 +1030,29 @@ int reduceGoods (struct env_info_clien_addr env_info_clien_addr_t, int storageNu
 
 
 /*
-**Êı¾İ¿âÄ£¿éÈÎÎñ
+**æ•°æ®åº“æ¨¡å—ä»»åŠ¡
 */
 void sqlite_task (struct env_info_clien_addr env_info_clien_addr_t, struct sqlite_operation sqlite_operation_t, int storageNum_t, int goodsKinds_t)
 {
 #if DEBUG_SQLITE
-	printf ("sqlite_task!!!\n");  //²âÊÔ²¿·Ö£¬¿ÉÉ¾¡£
+	printf ("sqlite_task!!!\n");  //æµ‹è¯•éƒ¨åˆ†ï¼Œå¯åˆ ã€‚
 #endif
 
 	int storage_num;
-	if (0 == sqlite_operation_t.table_select_mask)  //0±íÊ¾¶Ôenvironment±í½øĞĞ²Ù×÷
+	if (0 == sqlite_operation_t.table_select_mask)  //0è¡¨ç¤ºå¯¹environmentè¡¨è¿›è¡Œæ“ä½œ
 	{
-		if (0 == sqlite_operation_t.env_operation_mask)  //0±íÊ¾ÖØĞÂÉèÖÃ»·¾³²ÎÊı
+		if (0 == sqlite_operation_t.env_operation_mask)  //0è¡¨ç¤ºé‡æ–°è®¾ç½®ç¯å¢ƒå‚æ•°
 		{
 			updateEnv (env_info_clien_addr_t, storageNum_t);
 		}
-		else if (1 == sqlite_operation_t.env_operation_mask)  //1±íÊ¾»ñµÃ»·¾³²ÎÊı
+		else if (1 == sqlite_operation_t.env_operation_mask)  //1è¡¨ç¤ºè·å¾—ç¯å¢ƒå‚æ•°
 		{
 			getEnv (&env_info_clien_addr_t, storageNum_t);
 		}
 	}
-	else if (1 == sqlite_operation_t.table_select_mask)  //1±íÊ¾Í¬Ê±¶Ôtemperature¡¢humidityºÍilluminationÈı¸ö±í½øĞĞ²Ù×÷
+	else if (1 == sqlite_operation_t.table_select_mask)  //1è¡¨ç¤ºåŒæ—¶å¯¹temperatureã€humidityå’Œilluminationä¸‰ä¸ªè¡¨è¿›è¡Œæ“ä½œ
 	{
-		if(0 == sqlite_operation_t.table_operation_mask)  //0±íÊ¾Í¬Ê±¶Ôtemperature¡¢humidityºÍilluminationÈı¸ö±í½øĞĞ²åÈëÊı¾İµÄ²Ù×÷
+		if(0 == sqlite_operation_t.table_operation_mask)  //0è¡¨ç¤ºåŒæ—¶å¯¹temperatureã€humidityå’Œilluminationä¸‰ä¸ªè¡¨è¿›è¡Œæ’å…¥æ•°æ®çš„æ“ä½œ
 		{
 			for (storage_num=0;storage_num<STORAGE_NUM;storage_num++)
 			{
@@ -1061,14 +1065,14 @@ void sqlite_task (struct env_info_clien_addr env_info_clien_addr_t, struct sqlit
 			}
 #endif
 		}
-		else if (1 == sqlite_operation_t.table_operation_mask)  //1±íÊ¾Í¬Ê±»ñµÃtemperature¡¢humidityºÍilluminationÈı¸ö±íÊı¾İµÄ²Ù×÷
+		else if (1 == sqlite_operation_t.table_operation_mask)  //1è¡¨ç¤ºåŒæ—¶è·å¾—temperatureã€humidityå’Œilluminationä¸‰ä¸ªè¡¨æ•°æ®çš„æ“ä½œ
 		{
 			for (storage_num=0;storage_num<STORAGE_NUM;storage_num++)
 			{
 				getCollect_env (env_info_clien_addr_t.storage_no[storage_num].samplingTime, storage_num);
 			}
 		}
-		else if (2 == sqlite_operation_t.table_operation_mask)  //1±íÊ¾Í¬Ê±»ñµÃtemperature¡¢humidityºÍilluminationÈı¸ö±íÊı¾İµÄ²Ù×÷
+		else if (2 == sqlite_operation_t.table_operation_mask)  //1è¡¨ç¤ºåŒæ—¶è·å¾—temperatureã€humidityå’Œilluminationä¸‰ä¸ªè¡¨æ•°æ®çš„æ“ä½œ
 		{
 			for (storage_num=0;storage_num<STORAGE_NUM;storage_num++)
 			{
@@ -1076,11 +1080,11 @@ void sqlite_task (struct env_info_clien_addr env_info_clien_addr_t, struct sqlit
 			}
 		}
 	}
-	else if (2 == sqlite_operation_t.table_select_mask)  //2±íÊ¾¶Ôgoods±í½øĞĞ²Ù×÷
+	else if (2 == sqlite_operation_t.table_select_mask)  //2è¡¨ç¤ºå¯¹goodsè¡¨è¿›è¡Œæ“ä½œ
 	{
-		if (0 == sqlite_operation_t.goods_operation_mask)  //0±íÊ¾ÓĞĞÂµÄ»õÎïÈë¿â
+		if (0 == sqlite_operation_t.goods_operation_mask)  //0è¡¨ç¤ºæœ‰æ–°çš„è´§ç‰©å…¥åº“
 		{
-			if (0 == viewGoods(storageNum_t, goodsKinds_t)) //Èë¿â»õÎïÖÖÀà²Ö¿âÖĞÃ»ÓĞ
+			if (0 == viewGoods(storageNum_t, goodsKinds_t)) //å…¥åº“è´§ç‰©ç§ç±»ä»“åº“ä¸­æ²¡æœ‰
 			{
 				insertGoods (env_info_clien_addr_t, storageNum_t, goodsKinds_t);
 			}
@@ -1094,16 +1098,16 @@ void sqlite_task (struct env_info_clien_addr env_info_clien_addr_t, struct sqlit
 			getGoods (storageNum, goodsKinds);
 #endif
 		}
-		else if (1 == sqlite_operation_t.goods_operation_mask)  //1±íÊ¾ÓĞ»õÎï³ö¿â
+		else if (1 == sqlite_operation_t.goods_operation_mask)  //1è¡¨ç¤ºæœ‰è´§ç‰©å‡ºåº“
 		{
 			reduceGoods (env_info_clien_addr_t, storageNum_t, goodsKinds_t);
 //			deleteGoods (storageNum, goodsKinds);
 		}
-		else if (2 == sqlite_operation_t.goods_operation_mask)  //2±íÊ¾»ñµÃÖ¸¶¨goodsIdµÄ»õÎïĞÅÏ¢
+		else if (2 == sqlite_operation_t.goods_operation_mask)  //2è¡¨ç¤ºè·å¾—æŒ‡å®šgoodsIdçš„è´§ç‰©ä¿¡æ¯
 		{
 			getGoods (storageNum_t, goodsKinds_t);
 		}
-		else if (3 == sqlite_operation_t.goods_operation_mask)  //3±íÊ¾»ñµÃËùÓĞ»õÎïĞÅÏ¢
+		else if (3 == sqlite_operation_t.goods_operation_mask)  //3è¡¨ç¤ºè·å¾—æ‰€æœ‰è´§ç‰©ä¿¡æ¯
 		{
 			getAllGoods ();
 		}

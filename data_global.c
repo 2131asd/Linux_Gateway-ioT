@@ -39,8 +39,8 @@ struct storage_info storage_RT[STORAGE_NUM];
 
 unsigned char dev_sms_mask;
 unsigned char dev_infrared_mask;
-unsigned char dev_buzzer_mask;
-unsigned char dev_led_mask;
+unsigned char dev_buzzer_mask;//蜂鸣器控制掩码
+unsigned char dev_led_mask;//LED控制掩码
 unsigned char dev_camera_mask;
 unsigned char dev_uart_mask;
 
@@ -50,8 +50,8 @@ char recive_phone[12] = "18611634456";
 char center_phone[12] = "13800100500";
 
 int dev_infrared_fd;
-int dev_buzzer_fd;
-int dev_led_fd;
+int dev_buzzer_fd;//蜂鸣器设备文件描述符
+int dev_led_fd;//LED设备文件描述符
 int dev_camera_fd;
 int dev_sms_fd;
 int dev_uart_fd;//com 3

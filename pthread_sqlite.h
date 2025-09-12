@@ -30,21 +30,21 @@ extern struct env_info_clien_addr all_info_RT;
 
 
 
-int Create_table (void);  //´´½¨Êı¾İ¿â±í
-int  Init_table_env (void);  //³õÊ¼»¯»·¾³²ÎÊı±í
+int Create_table (void);  //åˆ›å»ºæ•°æ®åº“è¡¨
+int  Init_table_env (void);  //åˆå§‹åŒ–ç¯å¢ƒå‚æ•°è¡¨
 
 void sqlite_task(struct env_info_clien_addr env_info_clien_addr_t, struct sqlite_operation sqlite_operation_t, int storageNum_t, int goodsKinds_t);
 
-int updateEnv (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t);  //¸üĞÂÕû¸ö»·¾³²ÎÊı
-int getEnv (struct env_info_clien_addr *env_info_clien_addr_t, int storageNum_t);  //»ñµÃÕû¸ö»·¾³²ÎÊı
+int updateEnv (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t);  //æ›´æ–°æ•´ä¸ªç¯å¢ƒå‚æ•°
+int getEnv (struct env_info_clien_addr *env_info_clien_addr_t, int storageNum_t);  //è·å¾—æ•´ä¸ªç¯å¢ƒå‚æ•°
 int insertCollect_env (struct env_info_clien_addr env_info_clien_addr_t, int storage_num);
 int getCollect_env (char itime_t[], int storage_num_t);
 int getCollect_Current_env (int storage_num_t);
-int insertGoods (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t, int goodsKinds_t);  //²åÈëĞÂµÄ»õÎïĞÅÏ¢
-int deletGoods (int storageNum_t, int goodsKinds_t);  //É¾³ıÖ¸¶¨±àºÅ»õÎïĞÅÏ¢
-int getGoods (int storageNum_t, int goods_kinds_t);  //»ñµÃÖ¸¶¨±àºÅ»õÎïĞÅÏ¢
-int getGoodsInfo (void);  //»ñµÃËùÓĞ»õÎïĞÅÏ¢
-int viewGoods (int storageNum_t, int goodsKinds_t);  //²é¿´²Ö¿âÊÇ·ñ´æÔÚ´ËÀà»õÎï
+int insertGoods (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t, int goodsKinds_t);  //æ’å…¥æ–°çš„è´§ç‰©ä¿¡æ¯
+int deletGoods (int storageNum_t, int goodsKinds_t);  //åˆ é™¤æŒ‡å®šç¼–å·è´§ç‰©ä¿¡æ¯
+int getGoods (int storageNum_t, int goods_kinds_t);  //è·å¾—æŒ‡å®šç¼–å·è´§ç‰©ä¿¡æ¯
+int getGoodsInfo (void);  //è·å¾—æ‰€æœ‰è´§ç‰©ä¿¡æ¯
+int viewGoods (int storageNum_t, int goodsKinds_t);  //æŸ¥çœ‹ä»“åº“æ˜¯å¦å­˜åœ¨æ­¤ç±»è´§ç‰©
 int addGoods (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t, int goodsKinds_t);
 int reduceGoods (struct env_info_clien_addr env_info_clien_addr_t, int storageNum_t, int goodsKinds_t);
 

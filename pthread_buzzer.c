@@ -7,15 +7,23 @@ extern pthread_mutex_t mutex_buzzer;
 
 extern pthread_cond_t cond_buzzer;
 
+/*
+外部调用线程后会不断循环执行等待控制信号，根据全局变量dev_buzzer_mask判断并执行蜂鸣器开关，1开0关。
+
+实现需要通过驱动文件，文档没有驱动文件需要进行修改。
+*/
 void *pthread_buzzer (void *arg)
 {
 	unsigned char set_buzzer;
+
+	//以读写，非阻塞模式打开蜂鸣器设备文件，文件路径DEV_BUZZER "/dev/dota_beep"
 	if ((dev_buzzer_fd = open (DEV_BUZZER, O_RDWR | O_NONBLOCK)) < 0)
 	{
 		printf ("Cann't open file /dev/beep\n");
 		exit (-1);
 	}
 	printf ("pthread_buzzer is ok\n");
+
 	while (1)
 	{
 		pthread_mutex_lock (&mutex_buzzer);
