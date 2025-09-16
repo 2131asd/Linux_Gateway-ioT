@@ -1,3 +1,9 @@
+/*
+硬件 / 外设控制功能（网关的 "四肢"）
+
+控制 LED 灯和蜂鸣器（如告警时触发声光提示）
+*/
+
 #include "data_global.h"
 
 extern int dev_buzzer_fd;

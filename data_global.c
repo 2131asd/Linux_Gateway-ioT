@@ -1,3 +1,7 @@
+/*
+（全局数据结构，存储实时数据）。
+*/
+
 #include "data_global.h"
 #include "dota_cache.h"
 #include "sqlite_link_list.h"

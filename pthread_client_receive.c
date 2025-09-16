@@ -1,3 +1,9 @@
+/* 
+核心通信功能（网关与外部交互）
+
+接收外部网络数据（如客户端请求、设备上报数据）
+*/
+
 #include "link_list.h"
 #include "data_global.h"
 

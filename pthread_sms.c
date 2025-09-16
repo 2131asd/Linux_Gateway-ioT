@@ -1,3 +1,9 @@
+/*
+硬件 / 外设控制功能（网关的 "四肢"
+
+通过短信模块发送告警信息（如温湿度超限通知）
+*/
+
 #include "data_global.h"
 struct Message{
 	char size[4];		//消息长度

@@ -1,3 +1,9 @@
+/*
+硬件 / 外设控制功能（网关的 "四肢"）
+
+通过 UART（串口）与外设通信（如传感器、执行器），发送控制指令或接收数据。
+*/
+
 #include "data_global.h"
 
 extern unsigned char dev_uart_mask;

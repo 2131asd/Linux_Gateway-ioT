@@ -1,3 +1,9 @@
+/*
+硬件 / 外设控制功能（网关的 "四肢"）
+
+控制摄像头设备（/tmp/webcom），根据指令拍摄照片
+*/
+
 #include "data_global.h"
 
 extern char dev_camera_mask;

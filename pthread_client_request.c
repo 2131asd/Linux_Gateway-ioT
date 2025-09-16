@@ -1,3 +1,9 @@
+/*
+核心通信功能（网关与外部交互）
+
+处理客户端请求（如解析控制指令、响应状态查询），并通过消息队列（msgid）触发硬件控制或数据操作。
+*/
+
 #include "data_global.h"
 #include "dota_cache.h"
 #include "sqlite_link_list.h"

@@ -1,3 +1,9 @@
+/*
+数据处理功能（网关的 "大脑"）
+
+解析原始数据（如环境参数、货物信息），校验数据合法性，并触发告警（如温湿度超限）
+*/
+
 #include "data_global.h"
 #include "link_list.h"
 #include "sqlite_link_list.h"

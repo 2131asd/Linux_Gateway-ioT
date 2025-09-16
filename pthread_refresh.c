@@ -1,3 +1,9 @@
+/*
+硬件 / 外设控制功能（网关的 "四肢"）
+
+刷新设备状态（如 UI 界面显示的实时数据）
+*/
+
 #include "sem.h"
 #include "data_global.h"
 #include "sqlite_link_list.h"

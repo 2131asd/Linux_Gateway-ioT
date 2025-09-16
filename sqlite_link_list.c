@@ -1,3 +1,9 @@
+/*
+数据处理功能（网关的 "大脑"）
+
+数据库操作的链表缓存）
+*/
+
 #include "sqlite_link_list.h"
 #include "data_global.h"
 

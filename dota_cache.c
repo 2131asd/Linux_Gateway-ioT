@@ -1,3 +1,7 @@
+/*
+数据缓存与链表：dota_cache.c/dota_cache.h（缓存队列，线程间数据传递）、link_list.c/link_list.h（基础链表结构，用于数据临时存储）。
+*/
+
 #include "dota_cache.h"
 
 dota_cache_list CreateEmptyCacheList ()

@@ -1,3 +1,8 @@
+/*
+线程同步：sem.h 定义信号量，data_global.c 中初始化的互斥锁（pthread_mutex_t）和条件变量（pthread_cond_t），
+确保多线程安全访问共享资源（如全局数据、硬件设备）。
+*/
+
 #ifndef __SEM_H__
 #define __SEM_H__
 
